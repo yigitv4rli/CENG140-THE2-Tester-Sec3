@@ -3,7 +3,7 @@ import os
 import sys
 
 wrong=0
-
+CASES = 12
 compileF = "gcc -Wall -ansi -pedantic-errors the2.c -o the2"; 
 compileFF = os.popen(compileF)
 time.sleep(1)
@@ -14,8 +14,8 @@ def areSame(test, correct):
     else:
         return 0
 
-for inputNo in range(1,11):
-    print "Progress: " + str(inputNo) + "/10 testcases"
+for inputNo in range(1,CASES +1):
+    print "Progress: " + str(inputNo) + "/" + str(CASES) + " testcases"
     inputDir = "input/" + str(inputNo) + ".txt"
 
     run = "./the2 < input/" + str(inputNo) + ".txt"
@@ -34,4 +34,4 @@ for inputNo in range(1,11):
         wrong+=1
 
 
-print "You failed " + str(wrong) + " times on 10 testcases."
+print "You failed " + str(wrong) + " times on " + str(CASES) + " testcases."
